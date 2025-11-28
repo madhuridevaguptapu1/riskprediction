@@ -267,7 +267,7 @@ const ArchitectureSection = () => {
              {/* ERD Diagram Image */}
              <div className="relative w-full bg-white dark:bg-slate-800 rounded-2xl border border-border overflow-hidden shadow-xl p-2">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/to1wzo03_image.png" 
+                  src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/h52hd8in_image.png" 
                   alt="Nexus Strategies Entity Relationship Diagram" 
                   className="w-full h-auto object-contain rounded-lg"
                 />
