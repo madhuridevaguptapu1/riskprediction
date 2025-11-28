@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BarChart2, Shield, Users, Activity, Layers, Database, Layout, Lock, Server, FileText, GitBranch } from "lucide-react";
+import { ArrowRight, BarChart2, Shield, Users, Activity, Layers, Database, Layout, Lock, Server, FileText, GitBranch, AlertTriangle, Clock, FileWarning } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -79,18 +79,24 @@ const ProblemSection = () => {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <ul className="space-y-3 text-lg text-muted-foreground">
+              <ul className="space-y-4 text-lg text-muted-foreground">
                 <li className="flex items-start">
-                  <span className="mr-2 text-destructive">•</span>
-                  Lack of early detection mechanisms for at-risk students.
+                  <Clock className="mr-3 h-5 w-5 text-destructive shrink-0 mt-1" />
+                  <span>
+                    <strong>Late Detection:</strong> Advisors often identify at-risk students 3-4 weeks after critical incidents, making intervention less effective.
+                  </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-destructive">•</span>
-                  Disconnected data silos (Academic, Financial, Engagement).
+                  <Database className="mr-3 h-5 w-5 text-destructive shrink-0 mt-1" />
+                  <span>
+                    <strong>Data Silos:</strong> Critical data is fragmented across Blackboard (LMS), Banner (SIS), and Bursar systems, requiring manual compilation.
+                  </span>
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-2 text-destructive">•</span>
-                  Advisors forced into reactive rather than proactive roles.
+                  <FileWarning className="mr-3 h-5 w-5 text-destructive shrink-0 mt-1" />
+                  <span>
+                    <strong>Reactive Workflow:</strong> With a 1:300+ advisor-to-student ratio, advisors are forced into a reactive "firefighting" mode rather than proactive coaching.
+                  </span>
                 </li>
               </ul>
             </CardContent>
@@ -105,21 +111,21 @@ const ProblemSection = () => {
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-2 gap-4">
-                <div className="p-3 bg-secondary rounded-lg">
-                  <div className="font-semibold">Advisors</div>
-                  <div className="text-sm text-muted-foreground">Primary users needing actionable insights.</div>
+                <div className="p-4 bg-secondary rounded-lg">
+                  <div className="font-semibold text-primary mb-1">Advisors</div>
+                  <div className="text-sm text-muted-foreground">Need actionable, real-time insights to prioritize their caseloads effectively.</div>
                 </div>
-                <div className="p-3 bg-secondary rounded-lg">
-                  <div className="font-semibold">Students</div>
-                  <div className="text-sm text-muted-foreground">Beneficiaries of timely support.</div>
+                <div className="p-4 bg-secondary rounded-lg">
+                  <div className="font-semibold text-primary mb-1">Students</div>
+                  <div className="text-sm text-muted-foreground">Beneficiaries of timely support who need transparent feedback on their standing.</div>
                 </div>
-                <div className="p-3 bg-secondary rounded-lg">
-                  <div className="font-semibold">Success Office</div>
-                  <div className="text-sm text-muted-foreground">Strategic oversight & resource allocation.</div>
+                <div className="p-4 bg-secondary rounded-lg">
+                  <div className="font-semibold text-primary mb-1">Success Office</div>
+                  <div className="text-sm text-muted-foreground">Requires aggregate data for strategic resource allocation and policy making.</div>
                 </div>
-                <div className="p-3 bg-secondary rounded-lg">
-                  <div className="font-semibold">Institutional Research</div>
-                  <div className="text-sm text-muted-foreground">Data validation & model governance.</div>
+                <div className="p-4 bg-secondary rounded-lg">
+                  <div className="font-semibold text-primary mb-1">Institutional Research</div>
+                  <div className="text-sm text-muted-foreground">Ensures data validity, model governance, and ethical compliance.</div>
                 </div>
               </div>
             </CardContent>
@@ -196,7 +202,7 @@ const ArchitectureSection = () => {
           {/* Enterprise Architecture Diagram Image */}
           <div className="relative w-full h-full min-h-[400px] bg-white dark:bg-slate-800 rounded-2xl border border-border overflow-hidden shadow-xl flex items-center justify-center p-4">
              <img 
-                src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/t2cw629z_image.png" 
+                src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/duhdber2_image.png" 
                 alt="Nexus Strategies Enterprise Architecture Diagram" 
                 className="w-full h-auto object-contain max-h-[600px] rounded-lg"
              />
@@ -236,11 +242,23 @@ const ArchitectureSection = () => {
                    </div>
                    <div className="mt-6 pt-6 border-t border-slate-800">
                       <h4 className="font-semibold text-blue-400 mb-2">Schema Highlights</h4>
-                      <ul className="space-y-2 text-sm text-slate-400">
-                        <li className="flex justify-between"><span>Student_ID</span> <Badge variant="outline" className="text-xs">PK</Badge></li>
-                        <li className="flex justify-between"><span>GPA_Cumulative</span> <Badge variant="secondary" className="text-xs">Float</Badge></li>
-                        <li className="flex justify-between"><span>Attendance_Rate</span> <Badge variant="secondary" className="text-xs">%</Badge></li>
-                        <li className="flex justify-between"><span>Risk_Score</span> <Badge className="text-xs bg-blue-600">Computed</Badge></li>
+                      <ul className="space-y-3 text-sm text-slate-400">
+                        <li className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                            <span>Student_ID</span> 
+                            <Badge variant="outline" className="text-xs border-blue-500 text-blue-400">Integer (Unique Identifier)</Badge>
+                        </li>
+                        <li className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                            <span>GPA_Cumulative</span> 
+                            <Badge variant="secondary" className="text-xs">Float (0.0 - 4.0)</Badge>
+                        </li>
+                        <li className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                            <span>Attendance_Rate</span> 
+                            <Badge variant="secondary" className="text-xs">Percentage (0-100)</Badge>
+                        </li>
+                        <li className="flex justify-between items-center p-2 bg-slate-800/50 rounded">
+                            <span>Risk_Score</span> 
+                            <Badge className="text-xs bg-blue-600 hover:bg-blue-700">Integer (0-100 Computed)</Badge>
+                        </li>
                       </ul>
                    </div>
                 </CardContent>
@@ -249,7 +267,7 @@ const ArchitectureSection = () => {
              {/* ERD Diagram Image */}
              <div className="relative w-full bg-white dark:bg-slate-800 rounded-2xl border border-border overflow-hidden shadow-xl p-2">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/duhdber2_image.png" 
+                  src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/y7p9rwob_image.png" 
                   alt="Nexus Strategies Entity Relationship Diagram" 
                   className="w-full h-auto object-contain rounded-lg"
                 />
