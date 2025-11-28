@@ -202,7 +202,7 @@ const ArchitectureSection = () => {
           {/* Enterprise Architecture Diagram Image */}
           <div className="relative w-full h-full min-h-[400px] bg-white dark:bg-slate-800 rounded-2xl border border-border overflow-hidden shadow-xl flex items-center justify-center p-4">
              <img 
-                src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/6d3ghli8_t2cw629z_image.png" 
+                src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/7btic0vl_image.png" 
                 alt="Nexus Strategies Enterprise Architecture Diagram" 
                 className="w-full h-auto object-contain max-h-[600px] rounded-lg"
              />
