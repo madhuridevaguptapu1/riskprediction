@@ -202,7 +202,7 @@ const ArchitectureSection = () => {
           {/* Enterprise Architecture Diagram Image */}
           <div className="relative w-full h-full min-h-[400px] bg-white dark:bg-slate-800 rounded-2xl border border-border overflow-hidden shadow-xl flex items-center justify-center p-4">
              <img 
-                src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/duhdber2_image.png" 
+                src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/6d3ghli8_t2cw629z_image.png" 
                 alt="Nexus Strategies Enterprise Architecture Diagram" 
                 className="w-full h-auto object-contain max-h-[600px] rounded-lg"
              />
@@ -267,7 +267,7 @@ const ArchitectureSection = () => {
              {/* ERD Diagram Image */}
              <div className="relative w-full bg-white dark:bg-slate-800 rounded-2xl border border-border overflow-hidden shadow-xl p-2">
                 <img 
-                  src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/y7p9rwob_image.png" 
+                  src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/to1wzo03_image.png" 
                   alt="Nexus Strategies Entity Relationship Diagram" 
                   className="w-full h-auto object-contain rounded-lg"
                 />
@@ -418,15 +418,6 @@ const Footer = () => {
             <h3 className="text-xl font-bold text-white mb-2">Nexus Strategies</h3>
             <p className="text-sm text-slate-400">Empowering student success through data.</p>
           </div>
-          
-          <div className="flex gap-6">
-            <a href="#" className="hover:text-white transition-colors">GitHub Repo</a>
-            <a href="https://madhurinagadurga.github.io/student-retention/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Live Dashboard</a>
-            <a href="mailto:contact@nexusstrategies.com" className="hover:text-white transition-colors">Contact Team</a>
-          </div>
-        </div>
-        <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-500">
-          <p>Last Updated: October 2023 • Built with React & Tailwind CSS</p>
         </div>
       </div>
     </footer>
