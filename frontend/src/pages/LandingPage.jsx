@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BarChart2, Shield, Users, Activity, Layers, Database, Layout, Lock } from "lucide-react";
+import { ArrowRight, BarChart2, Shield, Users, Activity, Layers, Database, Layout, Lock, Server, FileText, GitBranch } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -26,7 +26,7 @@ const HeroSection = () => {
 
       <div className="container px-4 md:px-6 text-center z-10">
         <Badge variant="outline" className="mb-6 px-4 py-1 text-sm border-primary/20 text-primary bg-primary/5 backdrop-blur-sm">
-          Final Project Presentation
+          Nexus Strategies • Final Project Presentation
         </Badge>
         
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 font-heading">
@@ -41,8 +41,8 @@ const HeroSection = () => {
           <Button size="lg" className="rounded-full px-8 text-lg h-14 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all" onClick={() => document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' })}>
             View Dashboard <BarChart2 className="ml-2 h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" className="rounded-full px-8 text-lg h-14 border-2 hover:bg-secondary/50" onClick={() => document.getElementById('problem').scrollIntoView({ behavior: 'smooth' })}>
-            Explore Project <ArrowRight className="ml-2 h-5 w-5" />
+          <Button variant="outline" size="lg" className="rounded-full px-8 text-lg h-14 border-2 hover:bg-secondary/50" onClick={() => document.getElementById('architecture').scrollIntoView({ behavior: 'smooth' })}>
+            View Architecture <Layers className="ml-2 h-5 w-5" />
           </Button>
         </div>
 
@@ -50,7 +50,7 @@ const HeroSection = () => {
           <h3 className="text-lg font-semibold mb-2 text-primary">Executive Summary</h3>
           <p className="text-muted-foreground">
             HSU faced a critical challenge: advisors were reacting too late to student struggles due to disconnected data. 
-            Our solution integrates academic, financial, and engagement metrics into a unified risk scoring model. 
+            Nexus Strategies developed a unified risk scoring model integrating academic, financial, and engagement metrics. 
             This dashboard enables early detection, transparent decision-making, and targeted support, ultimately aiming to boost student retention and success.
           </p>
         </div>
@@ -125,102 +125,178 @@ const ProblemSection = () => {
             </CardContent>
           </Card>
         </div>
-
-        <div className="bg-secondary/30 rounded-2xl p-8 md:p-12">
-          <h3 className="text-2xl font-bold mb-6 flex items-center">
-            <Database className="mr-3 h-6 w-6 text-primary" />
-            Research Insights
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-background p-6 rounded-xl shadow-sm">
-              <h4 className="font-semibold text-lg mb-2 text-primary">Data-Informed Advising</h4>
-              <p className="text-muted-foreground">Shifting from intuition-based to evidence-based advising significantly improves retention outcomes.</p>
-            </div>
-            <div className="bg-background p-6 rounded-xl shadow-sm">
-              <h4 className="font-semibold text-lg mb-2 text-primary">Predictive Power</h4>
-              <p className="text-muted-foreground">Combining attendance and financial data with GPA creates a 40% more accurate risk profile.</p>
-            </div>
-            <div className="bg-background p-6 rounded-xl shadow-sm">
-              <h4 className="font-semibold text-lg mb-2 text-primary">Ethical Modeling</h4>
-              <p className="text-muted-foreground">Transparency in risk scoring is crucial to prevent bias and build trust with advisors.</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
 };
 
-const SolutionSection = () => {
+const ArchitectureSection = () => {
   return (
-    <section id="solution" className="py-24 bg-slate-50 dark:bg-slate-900">
+    <section id="architecture" className="py-24 bg-slate-50 dark:bg-slate-900">
       <div className="container px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-heading">Solution Architecture</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-heading">Enterprise Architecture</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A scalable, explainable, and advisor-centric system design.
+            A scalable, microservices-inspired architecture designed for performance and privacy.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 mb-16">
-          <Card className="hover-lift bg-gradient-to-br from-white to-indigo-50 dark:from-slate-800 dark:to-slate-900 border-primary/20">
-            <CardHeader>
-              <CardTitle className="text-primary">Risk Scoring Model</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Converts complex multi-variate data into a single, interpretable risk level (Low, Medium, High) for instant triage.</p>
-            </CardContent>
-          </Card>
-          <Card className="hover-lift bg-gradient-to-br from-white to-cyan-50 dark:from-slate-800 dark:to-slate-900 border-accent/20">
-            <CardHeader>
-              <CardTitle className="text-accent">Advisor Interface</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Clean, intuitive dashboard allowing advisors to view high-risk students with full context at a glance.</p>
-            </CardContent>
-          </Card>
-          <Card className="hover-lift bg-gradient-to-br from-white to-purple-50 dark:from-slate-800 dark:to-slate-900 border-purple-500/20">
-            <CardHeader>
-              <CardTitle className="text-purple-600">Filters & Trends</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">Dynamic analysis tools to filter by department, risk factors, and view historical trends.</p>
-            </CardContent>
-          </Card>
+        {/* Architecture Layers */}
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+          <div className="space-y-6">
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border-l-4 border-blue-500 hover:shadow-md transition-all">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="p-2 bg-blue-100 dark:bg-blue-900/30 rounded-lg text-blue-600">
+                  <Users className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">1. Business Layer</h3>
+              </div>
+              <p className="text-muted-foreground pl-14">
+                Supports HSU's advising workflow, enabling weekly data refreshes, continuous risk assessment, and intervention planning.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border-l-4 border-green-500 hover:shadow-md transition-all">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="p-2 bg-green-100 dark:bg-green-900/30 rounded-lg text-green-600">
+                  <Layout className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">2. Application Layer</h3>
+              </div>
+              <p className="text-muted-foreground pl-14">
+                Delivers the interactive dashboard, risk scoring logic, dynamic filtering, and student profile visualization.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border-l-4 border-orange-500 hover:shadow-md transition-all">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="p-2 bg-orange-100 dark:bg-orange-900/30 rounded-lg text-orange-600">
+                  <Database className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">3. Data Layer</h3>
+              </div>
+              <p className="text-muted-foreground pl-14">
+                Collates Academic, Attendance, and Financial data. Handles normalization, validation, and composite risk score calculation.
+              </p>
+            </div>
+
+            <div className="bg-white dark:bg-slate-800 p-6 rounded-xl shadow-sm border-l-4 border-slate-500 hover:shadow-md transition-all">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="p-2 bg-slate-100 dark:bg-slate-800 rounded-lg text-slate-600">
+                  <Server className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-bold">4. Technology Layer</h3>
+              </div>
+              <p className="text-muted-foreground pl-14">
+                Lightweight, browser-based client architecture ensuring fast performance, minimal maintenance, and high accessibility.
+              </p>
+            </div>
+          </div>
+
+          {/* Visual Diagram Placeholder / CSS Diagram */}
+          <div className="relative h-full min-h-[400px] bg-white dark:bg-slate-800 rounded-2xl border border-border p-8 flex flex-col items-center justify-center shadow-xl">
+            <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25" />
+            
+            <div className="relative z-10 w-full max-w-sm space-y-4">
+               <div className="text-center text-sm font-semibold text-muted-foreground mb-4">System Architecture Diagram</div>
+               
+               {/* Diagram Blocks */}
+               <div className="w-full p-4 bg-blue-50 border-2 border-blue-200 rounded-lg text-center">
+                  <span className="font-bold text-blue-700">Advisor / User</span>
+               </div>
+               <div className="h-8 w-0.5 bg-slate-300 mx-auto"></div>
+               <div className="w-full p-6 bg-white border-2 border-slate-200 rounded-xl shadow-lg space-y-2">
+                  <div className="font-bold text-slate-800">Application Core</div>
+                  <div className="grid grid-cols-2 gap-2 text-xs">
+                     <div className="p-2 bg-slate-50 rounded border">Risk Engine</div>
+                     <div className="p-2 bg-slate-50 rounded border">Visualizer</div>
+                  </div>
+               </div>
+               <div className="h-8 w-0.5 bg-slate-300 mx-auto"></div>
+               <div className="w-full p-4 bg-orange-50 border-2 border-orange-200 rounded-lg text-center flex justify-around">
+                  <div className="flex flex-col items-center">
+                    <Database className="h-4 w-4 text-orange-500 mb-1"/>
+                    <span className="text-xs font-bold text-orange-700">Academic</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <Database className="h-4 w-4 text-orange-500 mb-1"/>
+                    <span className="text-xs font-bold text-orange-700">Financial</span>
+                  </div>
+                  <div className="flex flex-col items-center">
+                    <Database className="h-4 w-4 text-orange-500 mb-1"/>
+                    <span className="text-xs font-bold text-orange-700">Behavior</span>
+                  </div>
+               </div>
+            </div>
+          </div>
         </div>
 
-        <div className="relative">
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-1 bg-border hidden md:block" />
-          
-          <div className="space-y-8 relative">
-            {[
-              { title: "Business Layer", desc: "Supports advisor workflows & decision making", icon: Users, color: "bg-blue-500" },
-              { title: "Application Layer", desc: "Provides dashboard UI & student profiles", icon: Layout, color: "bg-green-500" },
-              { title: "Data Layer", desc: "Integrates GPA, Attendance, Finance data", icon: Database, color: "bg-orange-500" },
-              { title: "Technology Layer", desc: "Browser-based, lightweight client architecture", icon: Layers, color: "bg-slate-500" },
-            ].map((layer, index) => (
-              <div key={index} className={`flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} flex-col gap-8`}>
-                <div className="flex-1 text-center md:text-right">
-                  {index % 2 === 0 && (
-                    <div className="md:pr-8">
-                      <h3 className="text-xl font-bold">{layer.title}</h3>
-                      <p className="text-muted-foreground">{layer.desc}</p>
-                    </div>
-                  )}
-                </div>
-                <div className={`w-12 h-12 rounded-full ${layer.color} text-white flex items-center justify-center z-10 shadow-lg shrink-0`}>
-                  <layer.icon className="h-6 w-6" />
-                </div>
-                <div className="flex-1 text-center md:text-left">
-                  {index % 2 !== 0 && (
-                    <div className="md:pl-8">
-                      <h3 className="text-xl font-bold">{layer.title}</h3>
-                      <p className="text-muted-foreground">{layer.desc}</p>
-                    </div>
-                  )}
-                </div>
-              </div>
-            ))}
+        {/* ERD & Data Schema Section */}
+        <div className="mt-24">
+          <div className="text-center mb-12">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">Data Schema & ERD</h3>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              A denormalized, performance-optimized data structure designed for client-side analytics.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+             <Card className="bg-slate-900 text-slate-50 border-slate-800">
+                <CardHeader>
+                   <CardTitle className="flex items-center gap-2">
+                      <GitBranch className="h-5 w-5 text-blue-400"/>
+                      Data Structure Strategy
+                   </CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-4">
+                   <p className="text-slate-300">
+                      The system utilizes a <strong>denormalized design</strong>, consolidating all variables into a single optimized table structure. This eliminates complex server-side joins and enables instant filtering and risk calculation in the browser.
+                   </p>
+                   <div className="grid grid-cols-2 gap-4 mt-4">
+                      <div className="p-3 bg-slate-800 rounded border border-slate-700">
+                         <div className="text-2xl font-bold text-blue-400">2,200</div>
+                         <div className="text-xs text-slate-400">Synthetic Records</div>
+                      </div>
+                      <div className="p-3 bg-slate-800 rounded border border-slate-700">
+                         <div className="text-2xl font-bold text-blue-400">8</div>
+                         <div className="text-xs text-slate-400">Semesters Tracked</div>
+                      </div>
+                   </div>
+                </CardContent>
+             </Card>
+
+             <Card className="border-dashed border-2">
+                <CardHeader>
+                   <CardTitle className="flex items-center gap-2">
+                      <FileText className="h-5 w-5 text-primary"/>
+                      Schema Overview
+                   </CardTitle>
+                </CardHeader>
+                <CardContent>
+                   <div className="space-y-3">
+                      <div className="flex items-center justify-between p-2 bg-secondary/50 rounded">
+                         <span className="font-mono text-sm">Student_ID</span>
+                         <Badge variant="outline">Primary Key</Badge>
+                      </div>
+                      <div className="flex items-center justify-between p-2 bg-secondary/50 rounded">
+                         <span className="font-mono text-sm">GPA_Cumulative</span>
+                         <Badge variant="secondary">Float</Badge>
+                      </div>
+                      <div className="flex items-center justify-between p-2 bg-secondary/50 rounded">
+                         <span className="font-mono text-sm">Attendance_Rate</span>
+                         <Badge variant="secondary">Percentage</Badge>
+                      </div>
+                      <div className="flex items-center justify-between p-2 bg-secondary/50 rounded">
+                         <span className="font-mono text-sm">Financial_Hold</span>
+                         <Badge variant="secondary">Boolean</Badge>
+                      </div>
+                      <div className="flex items-center justify-between p-2 bg-primary/10 border border-primary/20 rounded">
+                         <span className="font-mono text-sm font-bold text-primary">Risk_Score</span>
+                         <Badge>Computed</Badge>
+                      </div>
+                   </div>
+                </CardContent>
+             </Card>
           </div>
         </div>
       </div>
@@ -234,59 +310,42 @@ const DashboardSection = () => {
       <div className="container px-4 md:px-6">
         <div className="text-center mb-12">
           <Badge className="mb-4 bg-accent text-accent-foreground hover:bg-accent/80">Live Demo</Badge>
-          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-heading">Data & Dashboard</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-heading">Data Analysis & Dashboard</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Explore real-time department insights, student profiles, and trends.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-4 gap-4 mb-12">
-          <div className="p-6 bg-secondary/30 rounded-xl text-center border border-border">
-            <div className="text-3xl font-bold text-primary mb-1">2,200</div>
-            <div className="text-sm text-muted-foreground">Student Records</div>
-          </div>
-          <div className="p-6 bg-secondary/30 rounded-xl text-center border border-border">
-            <div className="text-3xl font-bold text-primary mb-1">8</div>
-            <div className="text-sm text-muted-foreground">Semesters Data</div>
-          </div>
-          <div className="p-6 bg-secondary/30 rounded-xl text-center border border-border">
-            <div className="text-3xl font-bold text-primary mb-1">10</div>
-            <div className="text-sm text-muted-foreground">Departments</div>
-          </div>
-          <div className="p-6 bg-secondary/30 rounded-xl text-center border border-border">
-            <div className="text-3xl font-bold text-primary mb-1">98%</div>
-            <div className="text-sm text-muted-foreground">Accuracy Target</div>
-          </div>
-        </div>
-
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           <Card className="lg:col-span-1 h-full">
             <CardHeader>
-              <CardTitle>Key Insights</CardTitle>
-              <CardDescription>Based on synthetic dataset analysis</CardDescription>
+              <CardTitle>Analysis Methodology</CardTitle>
+              <CardDescription>Synthetic Data & Benchmarks</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 mt-2 rounded-full bg-destructive shrink-0" />
-                <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">Attendance &lt; 70%</span> is the single strongest predictor of high risk.</p>
+            <CardContent className="space-y-6">
+              <div>
+                 <h4 className="font-semibold text-sm mb-2 text-primary">Data Sources</h4>
+                 <p className="text-sm text-muted-foreground">
+                    Generated using benchmarks from <strong>NCES, DOE, and NACUBO</strong> to simulate realistic academic patterns (GPA 2.7-3.2 avg) and financial pressures.
+                 </p>
               </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 mt-2 rounded-full bg-orange-500 shrink-0" />
-                <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">Chemistry Dept</span> shows the lowest average GPA, requiring immediate support.</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="w-2 h-2 mt-2 rounded-full bg-blue-500 shrink-0" />
-                <p className="text-sm text-muted-foreground"><span className="font-semibold text-foreground">Physics & Business</span> have the highest concentration of high-risk students.</p>
-              </div>
-              <div className="pt-4 border-t">
-                <div className="flex justify-between text-sm mb-2">
-                  <span>Avg GPA</span>
-                  <span className="font-bold">2.75</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span>Avg Attendance</span>
-                  <span className="font-bold">73%</span>
-                </div>
+              
+              <div>
+                 <h4 className="font-semibold text-sm mb-2 text-primary">Key Findings</h4>
+                 <ul className="space-y-3">
+                    <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                       <div className="w-1.5 h-1.5 mt-1.5 rounded-full bg-destructive shrink-0" />
+                       <span><strong>Early Warning:</strong> Systems like this improve retention when paired with targeted advising (Purdue/Georgia State).</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                       <div className="w-1.5 h-1.5 mt-1.5 rounded-full bg-orange-500 shrink-0" />
+                       <span><strong>Attendance:</strong> The strongest predictor of risk, correlated highly with course failure.</span>
+                    </li>
+                    <li className="flex items-start gap-2 text-sm text-muted-foreground">
+                       <div className="w-1.5 h-1.5 mt-1.5 rounded-full bg-blue-500 shrink-0" />
+                       <span><strong>Ethics:</strong> Transparent, explainable models are critical to prevent bias and build trust.</span>
+                    </li>
+                 </ul>
               </div>
             </CardContent>
           </Card>
@@ -378,14 +437,14 @@ const Footer = () => {
       <div className="container px-4 md:px-6">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-            <h3 className="text-xl font-bold text-white mb-2">Student Risk Prediction Dashboard</h3>
+            <h3 className="text-xl font-bold text-white mb-2">Nexus Strategies</h3>
             <p className="text-sm text-slate-400">Empowering student success through data.</p>
           </div>
           
           <div className="flex gap-6">
             <a href="#" className="hover:text-white transition-colors">GitHub Repo</a>
             <a href="https://madhurinagadurga.github.io/student-retention/" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">Live Dashboard</a>
-            <a href="mailto:contact@example.com" className="hover:text-white transition-colors">Contact Team</a>
+            <a href="mailto:contact@nexusstrategies.com" className="hover:text-white transition-colors">Contact Team</a>
           </div>
         </div>
         <div className="border-t border-slate-800 mt-8 pt-8 text-center text-sm text-slate-500">
@@ -421,11 +480,11 @@ const Navbar = () => {
           <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center text-white">
             <BarChart2 className="h-5 w-5" />
           </div>
-          <span>Risk<span className="text-primary">Dash</span></span>
+          <span>Nexus<span className="text-primary">Strategies</span></span>
         </div>
 
         <div className="hidden md:flex items-center gap-8">
-          {['Home', 'Problem', 'Solution', 'Dashboard', 'Ethics'].map((item) => (
+          {['Home', 'Problem', 'Architecture', 'Dashboard', 'Ethics'].map((item) => (
             <button 
               key={item}
               onClick={() => scrollTo(item.toLowerCase())}
@@ -450,7 +509,7 @@ export default function LandingPage() {
       <Navbar />
       <HeroSection />
       <ProblemSection />
-      <SolutionSection />
+      <ArchitectureSection />
       <DashboardSection />
       <EthicsSection />
       <Footer />
