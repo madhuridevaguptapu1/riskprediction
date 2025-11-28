@@ -7,9 +7,19 @@ import { ArrowRight, BarChart2, Shield, Users, Activity, Layers, Database, Layou
 const HeroSection = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
-      {/* Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-50 via-white to-cyan-50 dark:from-slate-900 dark:via-slate-900 dark:to-slate-800 -z-10" />
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-30">
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src="https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzd8MHwxfHNlYXJjaHw0fHxkYXRhJTIwdmlzdWFsaXphdGlvbnxlbnwwfHx8fDE3NjQzMzI3NDV8MA&ixlib=rb-4.1.0&q=85" 
+          alt="Data Analytics Background" 
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-white/90 dark:bg-slate-950/90 backdrop-blur-[2px]" />
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-50/80 via-white/50 to-cyan-50/80 dark:from-slate-900/90 dark:via-slate-900/80 dark:to-slate-800/90" />
+      </div>
+
+      {/* Animated Blobs */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-30 pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/20 rounded-full blur-[100px] animate-pulse" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-accent/20 rounded-full blur-[100px] animate-pulse delay-1000" />
       </div>
