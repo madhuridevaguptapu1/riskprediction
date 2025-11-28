@@ -121,13 +121,16 @@ frontend:
     implemented: false
     working: false
     file: "/app/frontend/src/pages/LandingPage.jsx"
-    stuck_count: 1
+    stuck_count: 2
     priority: "high"
     needs_retesting: false
     status_history:
         - working: false
           agent: "testing"
           comment: "❌ FAILED: 'Made with Emergent' tag is still present on the page - visible in bottom right corner of the application. This tag needs to be completely removed from the codebase."
+        - working: false
+          agent: "testing"
+          comment: "❌ CRITICAL ISSUE: 'Made with Emergent' tag is still visible on the page despite not being present in the source code. The tag appears to be injected by the hosting platform. Found 7 elements containing 'emergent' including specific 'Made with Emergent' link and div elements. This is a platform-level injection that cannot be removed from the application code."
 
   - task: "Enterprise Architecture Section"
     implemented: true
