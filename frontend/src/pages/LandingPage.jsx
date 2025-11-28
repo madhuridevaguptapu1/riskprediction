@@ -193,41 +193,13 @@ const ArchitectureSection = () => {
             </div>
           </div>
 
-          {/* Visual Diagram Placeholder / CSS Diagram */}
-          <div className="relative h-full min-h-[400px] bg-white dark:bg-slate-800 rounded-2xl border border-border p-8 flex flex-col items-center justify-center shadow-xl">
-            <div className="absolute inset-0 bg-grid-slate-100 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))] dark:bg-grid-slate-700/25" />
-            
-            <div className="relative z-10 w-full max-w-sm space-y-4">
-               <div className="text-center text-sm font-semibold text-muted-foreground mb-4">System Architecture Diagram</div>
-               
-               {/* Diagram Blocks */}
-               <div className="w-full p-4 bg-blue-50 border-2 border-blue-200 rounded-lg text-center">
-                  <span className="font-bold text-blue-700">Advisor / User</span>
-               </div>
-               <div className="h-8 w-0.5 bg-slate-300 mx-auto"></div>
-               <div className="w-full p-6 bg-white border-2 border-slate-200 rounded-xl shadow-lg space-y-2">
-                  <div className="font-bold text-slate-800">Application Core</div>
-                  <div className="grid grid-cols-2 gap-2 text-xs">
-                     <div className="p-2 bg-slate-50 rounded border">Risk Engine</div>
-                     <div className="p-2 bg-slate-50 rounded border">Visualizer</div>
-                  </div>
-               </div>
-               <div className="h-8 w-0.5 bg-slate-300 mx-auto"></div>
-               <div className="w-full p-4 bg-orange-50 border-2 border-orange-200 rounded-lg text-center flex justify-around">
-                  <div className="flex flex-col items-center">
-                    <Database className="h-4 w-4 text-orange-500 mb-1"/>
-                    <span className="text-xs font-bold text-orange-700">Academic</span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <Database className="h-4 w-4 text-orange-500 mb-1"/>
-                    <span className="text-xs font-bold text-orange-700">Financial</span>
-                  </div>
-                  <div className="flex flex-col items-center">
-                    <Database className="h-4 w-4 text-orange-500 mb-1"/>
-                    <span className="text-xs font-bold text-orange-700">Behavior</span>
-                  </div>
-               </div>
-            </div>
+          {/* Enterprise Architecture Diagram Image */}
+          <div className="relative w-full h-full min-h-[400px] bg-white dark:bg-slate-800 rounded-2xl border border-border overflow-hidden shadow-xl flex items-center justify-center p-4">
+             <img 
+                src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/t2cw629z_image.png" 
+                alt="Nexus Strategies Enterprise Architecture Diagram" 
+                className="w-full h-auto object-contain max-h-[600px] rounded-lg"
+             />
           </div>
         </div>
 
@@ -240,8 +212,8 @@ const ArchitectureSection = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-             <Card className="bg-slate-900 text-slate-50 border-slate-800">
+          <div className="grid md:grid-cols-2 gap-8 items-start">
+             <Card className="bg-slate-900 text-slate-50 border-slate-800 h-full">
                 <CardHeader>
                    <CardTitle className="flex items-center gap-2">
                       <GitBranch className="h-5 w-5 text-blue-400"/>
@@ -262,41 +234,29 @@ const ArchitectureSection = () => {
                          <div className="text-xs text-slate-400">Semesters Tracked</div>
                       </div>
                    </div>
-                </CardContent>
-             </Card>
-
-             <Card className="border-dashed border-2">
-                <CardHeader>
-                   <CardTitle className="flex items-center gap-2">
-                      <FileText className="h-5 w-5 text-primary"/>
-                      Schema Overview
-                   </CardTitle>
-                </CardHeader>
-                <CardContent>
-                   <div className="space-y-3">
-                      <div className="flex items-center justify-between p-2 bg-secondary/50 rounded">
-                         <span className="font-mono text-sm">Student_ID</span>
-                         <Badge variant="outline">Primary Key</Badge>
-                      </div>
-                      <div className="flex items-center justify-between p-2 bg-secondary/50 rounded">
-                         <span className="font-mono text-sm">GPA_Cumulative</span>
-                         <Badge variant="secondary">Float</Badge>
-                      </div>
-                      <div className="flex items-center justify-between p-2 bg-secondary/50 rounded">
-                         <span className="font-mono text-sm">Attendance_Rate</span>
-                         <Badge variant="secondary">Percentage</Badge>
-                      </div>
-                      <div className="flex items-center justify-between p-2 bg-secondary/50 rounded">
-                         <span className="font-mono text-sm">Financial_Hold</span>
-                         <Badge variant="secondary">Boolean</Badge>
-                      </div>
-                      <div className="flex items-center justify-between p-2 bg-primary/10 border border-primary/20 rounded">
-                         <span className="font-mono text-sm font-bold text-primary">Risk_Score</span>
-                         <Badge>Computed</Badge>
-                      </div>
+                   <div className="mt-6 pt-6 border-t border-slate-800">
+                      <h4 className="font-semibold text-blue-400 mb-2">Schema Highlights</h4>
+                      <ul className="space-y-2 text-sm text-slate-400">
+                        <li className="flex justify-between"><span>Student_ID</span> <Badge variant="outline" className="text-xs">PK</Badge></li>
+                        <li className="flex justify-between"><span>GPA_Cumulative</span> <Badge variant="secondary" className="text-xs">Float</Badge></li>
+                        <li className="flex justify-between"><span>Attendance_Rate</span> <Badge variant="secondary" className="text-xs">%</Badge></li>
+                        <li className="flex justify-between"><span>Risk_Score</span> <Badge className="text-xs bg-blue-600">Computed</Badge></li>
+                      </ul>
                    </div>
                 </CardContent>
              </Card>
+
+             {/* ERD Diagram Image */}
+             <div className="relative w-full bg-white dark:bg-slate-800 rounded-2xl border border-border overflow-hidden shadow-xl p-2">
+                <img 
+                  src="https://customer-assets.emergentagent.com/job_student-success-11/artifacts/duhdber2_image.png" 
+                  alt="Nexus Strategies Entity Relationship Diagram" 
+                  className="w-full h-auto object-contain rounded-lg"
+                />
+                <div className="p-2 text-center text-xs text-muted-foreground bg-secondary/50 mt-2 rounded">
+                  Figure 2: Entity Relationship Diagram (ERD)
+                </div>
+             </div>
           </div>
         </div>
       </div>

@@ -111,3 +111,15 @@
     @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
   }
 }
+
+/* FORCE HIDE EMERGENT BADGE */
+#emergent-badge {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  z-index: -9999 !important;
+}
