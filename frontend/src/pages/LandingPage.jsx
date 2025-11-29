@@ -50,7 +50,7 @@ const HeroSection = () => {
           <h3 className="text-lg font-semibold mb-2 text-primary">Executive Summary</h3>
           <p className="text-muted-foreground">
             HSU faced a critical challenge: advisors were reacting too late to student struggles due to disconnected data. 
-            Nexus Strategies developed a unified risk scoring model integrating academic, financial, and engagement metrics. 
+            Nexus Strategies developed a unified risk scoring model integrating academic, financial, and attendance metrics. 
             This dashboard enables early detection, transparent decision-making, and targeted support, ultimately aiming to boost student retention and success.
           </p>
         </div>

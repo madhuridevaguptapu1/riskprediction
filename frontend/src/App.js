@@ -4,9 +4,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LandingPage from "@/pages/LandingPage";
 
 function App() {
+  useEffect(() => {
+    console.log("✅ Risk Prediction App deployed successfully on GitHub Pages!");
+  }, []);
+
   return (
     <div className="App">
-      <BrowserRouter>
+      {/* ✅ 'basename' ensures routing works correctly on GitHub Pages */}
+      <BrowserRouter basename="/riskprediction">
         <Routes>
           <Route path="/" element={<LandingPage />} />
         </Routes>
