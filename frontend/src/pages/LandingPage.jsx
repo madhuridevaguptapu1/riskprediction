@@ -1,7 +1,8 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { BarChart2, Layers } from "lucide-react";
+import { ArrowRight, BarChart2, Shield, Users, Activity, Layers, Database, Layout, Lock, Server, FileText, GitBranch, AlertTriangle, Clock, FileWarning } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -37,72 +38,60 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <Button 
-            size="lg" 
-            className="rounded-full px-8 text-lg h-14 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all" 
-            onClick={() => document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Button size="lg" className="rounded-full px-8 text-lg h-14 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all" onClick={() => document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' })}>
             View Dashboard <BarChart2 className="ml-2 h-5 w-5" />
           </Button>
-          <Button 
-            variant="outline" 
-            size="lg" 
-            className="rounded-full px-8 text-lg h-14 border-2 hover:bg-secondary/50" 
-            onClick={() => document.getElementById('architecture').scrollIntoView({ behavior: 'smooth' })}
-          >
+          <Button variant="outline" size="lg" className="rounded-full px-8 text-lg h-14 border-2 hover:bg-secondary/50" onClick={() => document.getElementById('architecture').scrollIntoView({ behavior: 'smooth' })}>
             View Architecture <Layers className="ml-2 h-5 w-5" />
           </Button>
         </div>
 
-        {/* Executive Summary + Team Table */}
         <div className="glass-panel rounded-2xl p-8 max-w-4xl mx-auto text-left">
           <h3 className="text-lg font-semibold mb-2 text-primary">Executive Summary</h3>
-          <p className="text-muted-foreground mb-8">
+          <p className="text-muted-foreground">
             HSU faced a critical challenge: advisors were reacting too late to student struggles due to disconnected data. 
             Nexus Strategies developed a unified risk scoring model integrating academic, financial, and attendance metrics. 
             This dashboard enables early detection, transparent decision-making, and targeted support, ultimately aiming to boost student retention and success.
           </p>
+          <h3 className="text-lg font-semibold mt-8 mb-4 text-primary">Project Team</h3>
+<div className="overflow-x-auto">
+  <table className="min-w-full border border-gray-200 rounded-lg shadow-sm bg-white/70 backdrop-blur-sm">
+    <thead className="bg-primary/10">
+      <tr>
+        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Name of the Group Member</th>
+        <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Assigned Role</th>
+      </tr>
+    </thead>
+    <tbody className="text-gray-700">
+      <tr>
+        <td className="px-6 py-3 border-t">Ram Pratap Bekkum</td>
+        <td className="px-6 py-3 border-t">Data Analyst</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-3 border-t">Nihaal Rimmalapudi</td>
+        <td className="px-6 py-3 border-t">Business Process Analyst</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-3 border-t">Likitha Chalamalasetty</td>
+        <td className="px-6 py-3 border-t">Data Scientist</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-3 border-t">Sai Sowbhagya Lakshmi Madhuri Devaguptapu</td>
+        <td className="px-6 py-3 border-t">Dashboard Developer</td>
+      </tr>
+      <tr>
+        <td className="px-6 py-3 border-t">Venkata Naga Surya Lalitamanogina Parsa</td>
+        <td className="px-6 py-3 border-t">IT Architect</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-          {/* 👇 Project Team Section */}
-          <h3 className="text-lg font-semibold mb-4 text-primary">Project Team</h3>
-          <div className="overflow-x-auto">
-            <table className="min-w-full border border-gray-200 rounded-lg shadow-sm bg-white/70 backdrop-blur-sm">
-              <thead className="bg-primary/10">
-                <tr>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Name of the Group Member</th>
-                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Assigned Role</th>
-                </tr>
-              </thead>
-              <tbody className="text-gray-700">
-                <tr>
-                  <td className="px-6 py-3 border-t">Ram Pratap Bekkum</td>
-                  <td className="px-6 py-3 border-t">Data Analyst</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-3 border-t">Nihaal Rimmalapudi</td>
-                  <td className="px-6 py-3 border-t">Business Process Analyst</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-3 border-t">Likitha Chalamalasetty</td>
-                  <td className="px-6 py-3 border-t">Data Scientist</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-3 border-t">Sai Sowbhagya Lakshmi Madhuri Devaguptapu</td>
-                  <td className="px-6 py-3 border-t">Dashboard Developer</td>
-                </tr>
-                <tr>
-                  <td className="px-6 py-3 border-t">Venkata Naga Surya Lalitamanogina Parsa</td>
-                  <td className="px-6 py-3 border-t">IT Architect</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
         </div>
       </div>
     </section>
   );
 };
-
 
 const ProblemSection = () => {
   return (
@@ -180,6 +169,119 @@ const ProblemSection = () => {
     </section>
   );
 };
+
+const SolutionSection = () => {
+  return (
+    <section id="solution" className="py-24 bg-slate-50 dark:bg-slate-900">
+      <div className="container px-4 md:px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4 font-heading">
+            Proposed Solution & Project Charter
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            From challenge to impact — a data-driven solution designed to identify, predict, and act on student success signals.
+          </p>
+        </div>
+
+        {/* Solution Overview */}
+        <div className="grid md:grid-cols-2 gap-10 mb-20">
+          <Card className="hover-lift border-l-4 border-l-primary shadow-sm">
+            <CardHeader>
+              <CardTitle className="flex items-center text-2xl">
+                <BarChart2 className="mr-3 h-6 w-6 text-primary" />
+                Solution Overview
+              </CardTitle>
+              <CardDescription>GitHub Pages + MongoDB + PostgreSQL</CardDescription>
+            </CardHeader>
+
+            <CardContent className="text-muted-foreground text-lg space-y-4">
+              <p>
+                The proposed solution is a comprehensive web-based{" "}
+                <strong>Student Risk Prediction Dashboard</strong> that empowers
+                Horizon State University advisors to identify and address student
+                risk proactively. It unifies previously fragmented{" "}
+                <strong>academic, attendance, and financial data</strong> into a
+                single analytical platform for transparent, data-driven
+                decision-making.
+              </p>
+
+              <p>
+                At its core, a <strong>risk scoring model</strong> converts key
+                indicators into a 0–100 scale, highlighting low-, medium-, and
+                high-risk students based on academic trends, attendance, and
+                financial stress factors. The system runs on a lightweight{" "}
+                <strong>client-side architecture</strong> hosted on GitHub Pages
+                with data stored in <strong>MongoDB</strong> and{" "}
+                <strong>PostgreSQL</strong>.
+              </p>
+
+              <ul className="list-disc pl-6 space-y-2">
+                <li>Unified dataset combining academic, attendance, and financial indicators</li>
+                <li>Automated student risk scoring using a transparent weighted model</li>
+                <li>Browser-based architecture ensuring low cost and high scalability</li>
+                <li>Interactive web dashboard for visualizing student performance and risk levels</li>
+              </ul>
+            </CardContent>
+          </Card>
+
+          {/* Project Charter Summary */}
+          <Card className="hover-lift border-l-4 border-l-accent shadow-sm">
+            <CardHeader>
+              <CardTitle className="flex items-center text-2xl">
+                <FileText className="mr-3 h-6 w-6 text-accent" />
+                Project Charter Summary
+              </CardTitle>
+              <CardDescription>Governance, Scope & Objectives</CardDescription>
+            </CardHeader>
+            <CardContent className="text-muted-foreground text-lg space-y-4">
+              <p>
+                <strong>Project Title:</strong> Student Risk Prediction System
+                <br />
+                <strong>Prepared By:</strong> Nexus Strategies
+                <br />
+                <strong>Supervisor:</strong> Prof. Tatiana Cardona Sepulveda
+                <br />
+                <strong>Date:</strong> Oct 18, 2025
+              </p>
+
+              <h4 className="font-semibold text-primary mt-4">🎯 Objectives</h4>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Reduce student attrition through predictive modeling.</li>
+                <li>Provide early risk alerts for academic advisors.</li>
+                <li>Enable transparent, data-driven interventions.</li>
+              </ul>
+
+              <h4 className="font-semibold text-primary mt-4">📦 Scope</h4>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Development of predictive model and web dashboard.</li>
+                <li>Integration with PostgreSQL and MongoDB backend.</li>
+                <li>
+                  <strong>Out of Scope:</strong> Real student data and mobile app
+                  integration.
+                </li>
+              </ul>
+
+              <h4 className="font-semibold text-primary mt-4">📅 Key Milestones</h4>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Weeks 1–4: Problem research & dataset creation</li>
+                <li>Weeks 5–8: Model development and backend integration</li>
+                <li>Weeks 9–12: Frontend dashboard and testing</li>
+                <li>Weeks 13–16: Final presentation & documentation</li>
+              </ul>
+
+              <h4 className="font-semibold text-primary mt-4">📊 Success Metrics</h4>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>90% model accuracy in identifying at-risk students</li>
+                <li>20% reduction in advisor response time</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 
 const ArchitectureSection = () => {
   return (
@@ -523,6 +625,7 @@ export default function LandingPage() {
       <Navbar />
       <HeroSection />
       <ProblemSection />
+      <SolutionSection />
       <ArchitectureSection />
       <DashboardSection />
       <EthicsSection />
