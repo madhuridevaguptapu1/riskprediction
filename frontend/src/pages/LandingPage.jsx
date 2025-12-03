@@ -1,8 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, BarChart2, Shield, Users, Activity, Layers, Database, Layout, Lock, Server, FileText, GitBranch, AlertTriangle, Clock, FileWarning } from "lucide-react";
+import { BarChart2, Layers } from "lucide-react";
 
 const HeroSection = () => {
   return (
@@ -38,26 +37,72 @@ const HeroSection = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-          <Button size="lg" className="rounded-full px-8 text-lg h-14 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all" onClick={() => document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' })}>
+          <Button 
+            size="lg" 
+            className="rounded-full px-8 text-lg h-14 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all" 
+            onClick={() => document.getElementById('dashboard').scrollIntoView({ behavior: 'smooth' })}
+          >
             View Dashboard <BarChart2 className="ml-2 h-5 w-5" />
           </Button>
-          <Button variant="outline" size="lg" className="rounded-full px-8 text-lg h-14 border-2 hover:bg-secondary/50" onClick={() => document.getElementById('architecture').scrollIntoView({ behavior: 'smooth' })}>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="rounded-full px-8 text-lg h-14 border-2 hover:bg-secondary/50" 
+            onClick={() => document.getElementById('architecture').scrollIntoView({ behavior: 'smooth' })}
+          >
             View Architecture <Layers className="ml-2 h-5 w-5" />
           </Button>
         </div>
 
+        {/* Executive Summary + Team Table */}
         <div className="glass-panel rounded-2xl p-8 max-w-4xl mx-auto text-left">
           <h3 className="text-lg font-semibold mb-2 text-primary">Executive Summary</h3>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground mb-8">
             HSU faced a critical challenge: advisors were reacting too late to student struggles due to disconnected data. 
             Nexus Strategies developed a unified risk scoring model integrating academic, financial, and attendance metrics. 
             This dashboard enables early detection, transparent decision-making, and targeted support, ultimately aiming to boost student retention and success.
           </p>
+
+          {/* 👇 Project Team Section */}
+          <h3 className="text-lg font-semibold mb-4 text-primary">Project Team</h3>
+          <div className="overflow-x-auto">
+            <table className="min-w-full border border-gray-200 rounded-lg shadow-sm bg-white/70 backdrop-blur-sm">
+              <thead className="bg-primary/10">
+                <tr>
+                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Name of the Group Member</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold text-gray-700">Assigned Role</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-700">
+                <tr>
+                  <td className="px-6 py-3 border-t">Ram Pratap Bekkum</td>
+                  <td className="px-6 py-3 border-t">Data Analyst</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3 border-t">Nihaal Rimmalapudi</td>
+                  <td className="px-6 py-3 border-t">Business Process Analyst</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3 border-t">Likitha Chalamalasetty</td>
+                  <td className="px-6 py-3 border-t">Data Scientist</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3 border-t">Sai Sowbhagya Lakshmi Madhuri Devaguptapu</td>
+                  <td className="px-6 py-3 border-t">Dashboard Developer</td>
+                </tr>
+                <tr>
+                  <td className="px-6 py-3 border-t">Venkata Naga Surya Lalitamanogina Parsa</td>
+                  <td className="px-6 py-3 border-t">IT Architect</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
   );
 };
+
 
 const ProblemSection = () => {
   return (
